@@ -1,0 +1,12 @@
+<input type="text" [(ngModel)]="searchQuery" placeholder="Search by product name" (input)="applySearchFilter()">
+<button (click)="toggleSortOrder()">Toggle Sort Order</button>
+<fieldset *ngFor="let product of filteredProducts" class="product-card">
+  <legend>{{ product.name }}</legend>
+  <p>Price: {{ product.price }}</p>
+  <p *ngIf="product.option">Option: {{ product.option }}</p>
+  <button (click)="buyProduct(product)">Buy</button>
+  <button (click)="viewDetails(product)">Details</button>
+  <button (click)="modifierProduct(product)">modifier</button>
+  <button (click)="deleteProduct(product.id)">delete</button>
+
+</fieldset>

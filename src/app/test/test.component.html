@@ -1,0 +1,6 @@
+<p>test works!</p>
+<input [(ngModel)]="property" name="property"><br/>
+{{output}}<br/>
+<button (click)="goToChild()">Go to child</button>
+<app-child *ngIf="show && property != ''" (output)="getNewVal($event)" [property]="property"></app-child>
+
